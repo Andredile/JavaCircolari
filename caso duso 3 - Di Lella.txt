@@ -1,0 +1,28 @@
+﻿Caso d’uso: inserimento da parte di un utente autorizzato di una circolare o notizia (app e/o web)
+
+Pre-condizione: 
+• essersi collegato come componente dello staff
+• aver cliccato sulla voce inserimento
+REST GET www.jeanmonnet.com/gestionecircolari/utenti?Nome=Admin&Cognome=Admin&Email=null&Classe=null&Username=Admin&Password=Password
+
+Flusso principale: 
+1. il sistema visualizza l’elenco delle circolari/notizie mediante una form da lui inserite in base alla data di inserimento (dalla più recente alla più vecchia)
+2. l’utente clicca sul bottone aggiungi
+3. il sistema visualizza la form per l’inserimento dei dati
+4. l’utente seleziona il nome della tipologia tra quelle disponibili, i destinatari tra docenti/studenti/genitori/ATA, il livello di privacy tra pubblica/privata,  l’oggetto, i tag che descrivono il contenuto (tra cui anno, sezione, specializzazione), il testo della circolare/notizia.
+REST PUT http://www.jeanmonnet.com/gestionecircolari/circolare?Numero=0123&Categoria=avviso&Destinatario=studenti&Privacy=pubblica&Data=28-04-2019&Contenuto=prova%circolare
+5. il sistema conferma l’inserimento se non ci sono conflitti (circolare doppia)
+
+Post-condizione:
+•il database contiene l’elenco aggiornato delle circolari/notizie
+
+
+
+
+
+
+
+
+
+
+
